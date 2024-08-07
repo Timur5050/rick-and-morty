@@ -35,3 +35,17 @@ docker run -d -p 6379:6379 redis
 # Create schedule for running sync in DB
 run app: python manage.py runserver
 ```
+
+# Run with Docker
+### You need to have docker
+```sh
+# Clone the repository
+git clone https://github.com/Timur5050/rick-and-morty.git
+# Change to the project directory
+cd rick-and-morty
+# Copy sample.env -> .env and populate with all required data 
+# Build and run docker-compose
+docker-compose up --build
+Create admin user & Create schedule for running sync in DB
+```
+
