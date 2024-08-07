@@ -1,5 +1,6 @@
 import requests
 from django.conf import settings
+from django.db import IntegrityError
 
 from characters.models import Characters
 
@@ -34,7 +35,10 @@ def scrape_characters() -> list[Characters]:
 
 def save_characters(characters: list[Characters]) -> None:
     for character in characters:
-        character.save()
+        try:
+            character.save()
+        except IntegrityError:
+            print("character with already saved")
 
 
 def sync_characters() -> None:
