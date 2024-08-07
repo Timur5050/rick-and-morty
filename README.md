@@ -30,7 +30,7 @@ docker run -d -p 6379:6379 redis
 - celery -A rick_and_morty_api worker --loglevel=INFO --without-gossip --without-mingle --without-heartbeat -Ofair --pool=solo
 
 # Terminal 2: Start Celery Beat Scheduler
-- celery beat in celery beat: celery -A rick_and_morty_api beat -l INFO --scheduler django_celery_beat.schedulers:DatabaseScheduler
+- celery -A rick_and_morty_api beat -l INFO --scheduler django_celery_beat.schedulers:DatabaseScheduler
 
 # Create schedule for running sync in DB
 run app: python manage.py runserver
