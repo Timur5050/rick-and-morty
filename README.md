@@ -18,6 +18,8 @@ venv\Scripts\activate
 source venv/bin/activate
 # Install required packages
 pip install -r requirements.txt
+# Create new Postgres DB & User
+# Copy sample.env -> .env and populate with all required data 
 # Apply migrations
 python manage.py migrate
 
